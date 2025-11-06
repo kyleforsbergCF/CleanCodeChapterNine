@@ -5,22 +5,22 @@ namespace ChapterNine.Application.Services;
 
 public class UserService(IUserRepository userRepository, ICacheService cacheService, IUserValidator userValidator) : IUserService
 {
-    public Task<IEnumerable<User>> GetUsersAsync(CancellationToken cancellationToken)
+    public async Task<IEnumerable<User>> GetUsersAsync(CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }
 
-    public Task<User> CreateUserAsync(User user, CancellationToken cancellationToken)
+    public async Task<User> CreateUserAsync(User user, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }
 
-    public Task<User> UpdateUserAsync(User user, CancellationToken cancellationToken)
+    public async Task<User> UpdateUserAsync(User user, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }
 
-    public Task DeleteUserAsync(Guid id, CancellationToken cancellationToken)
+    public async Task DeleteUserAsync(Guid id, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }
