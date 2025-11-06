@@ -61,10 +61,10 @@ public class UserServiceTest
 
         var results = await userService.GetUsersAsync(default);
 
-        // Assert that 2 results are returned and that the repository was invoked once
-        // No need to check the cache invocations
+        // Assert that 2 results are returned and that the repository and cache were invoked once 
         Assert.Equal(2, results.Count());
         repositoryMock.Verify(mock => mock.GetAllAsync(It.IsAny<CancellationToken>()), Times.Once);
+        cacheServiceMock.Verify(mock => mock.SetValueAsync("users", repositoryUsers, It.IsAny<CancellationToken>()), Times.Once);
     }
 
     [Fact]
